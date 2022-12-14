@@ -11,9 +11,15 @@ import RxCocoa
 
 class MovieListViewModel {
     
-    var movies: BehaviorRelay<[MovieWithPoster]> = BehaviorRelay(value: [])
-    let movieRepository: MovieRepository! = MovieRepository()
-    let disposeBag = DisposeBag()
+    var movies: BehaviorRelay<[MovieWithPoster]>!
+    var movieRepository: MovieRepository!
+    var disposeBag: DisposeBag!
+    
+    init(movies: BehaviorRelay<[MovieWithPoster]>, movieRepository: MovieRepository, disposeBag: DisposeBag) {
+        self.movies = movies
+        self.movieRepository = movieRepository
+        self.disposeBag = disposeBag
+    }
     
     
     func getMovies() {

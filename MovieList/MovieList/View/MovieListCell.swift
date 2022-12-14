@@ -10,9 +10,13 @@ import UIKit
 
 class MovieListCell: UITableViewCell {
     
+    //MARK: - Outlets
+    
     @IBOutlet weak var moviePosterImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    
+    //MARK: - Methods
     
     func configureWithMovie(_ movie: MovieWithPoster) {
         self.titleLabel.text = movie.movie.title
@@ -21,7 +25,4 @@ class MovieListCell: UITableViewCell {
         
     }
     
-    func configureWithPoster(_ poster: UIImage) {
-        self.moviePosterImageView.image = poster
-    }
 }

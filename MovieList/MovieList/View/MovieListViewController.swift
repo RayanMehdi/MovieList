@@ -8,13 +8,27 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Swinject
 
 class MovieListViewController: UIViewController {
     
     //MARK: - Properties
     
-    var viewModel = MovieListViewModel()
-    let disposeBag = DisposeBag()
+    var viewModel : MovieListViewModel!
+    var disposeBag : DisposeBag!
+    
+    
+    
+    init(viewModel: MovieListViewModel, disposeBag: DisposeBag) {
+        self.viewModel = viewModel
+        self.disposeBag = disposeBag
+        super.init(nibName: "MovieListViewController", bundle: .main)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+       // fatalError("init(coder:) has not been implemented")
+    }
     
     //MARK: - Outltets
     
@@ -25,16 +39,12 @@ class MovieListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableViewDatasource()
-        
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.getMovies()
     }
-    
-
     
 }
 
@@ -51,24 +61,6 @@ extension MovieListViewController {
                     cell.configureWithMovie(movie)
                 }
                 .disposed(by: disposeBag)
-        
-
     }
 }
 
-//MARK: - tableview datasource
-
-extension MovieListViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieListCell", for: indexPath) as! MovieListCell
-        
-        cell.titleLabel.text = "TEST"
-        
-        return cell
-    }
-}

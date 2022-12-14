@@ -24,14 +24,17 @@ enum MovieApiError :Int, Error {
 
 class MovieRepository {
     
-    let apiKey = "623b49dece629025a2b1ae6ccc0dc079"
-    let baseUrl = "https://api.themoviedb.org/3/movie"
+    var apiKey: String! 
+    var baseUrl: String! 
     
+    init(apiKey: String, baseUrl: String) {
+        self.apiKey = apiKey
+        self.baseUrl = baseUrl
+    }
     
     func getPoster(forMovie movie: Movie) -> Observable<UIImage>{
-        let parameters = ["api_key": apiKey]
         return Observable.create { obs in
-            AF.request(movie.posterURL ?? "", parameters: parameters).validate()
+            AF.request(movie.posterURL ?? "", parameters: [:]).validate()
                 .response{ response in
                     switch response.result {
                     case .success(let data):
@@ -41,7 +44,7 @@ class MovieRepository {
                         }
                         obs.onNext(UIImage(data: image)!)
                         return
-                    case .failure(let error):
+                    case .failure(_):
                         return
                     }
                     
@@ -53,10 +56,10 @@ class MovieRepository {
     }
     
     func getMovies() -> Observable<MovieResponse> {
-        let parameters = ["api_key": apiKey]
-        let url = baseUrl + "/popular?api_key=\(apiKey)"
+        
+        let url = baseUrl + "/popular?api_key=\(apiKey!)"
         return Observable.create { obs in
-            AF.request(url, parameters: parameters).validate()
+            AF.request(url, parameters: [:]).validate()
                 .responseDecodable(of: MovieResponse.self ) { response in
                     switch response.result {
                     case .success:
