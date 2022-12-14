@@ -17,8 +17,7 @@ class MovieListViewController: UIViewController {
     var viewModel : MovieListViewModel!
     var disposeBag : DisposeBag!
     
-    
-    
+    //MARK: - Init
     init(viewModel: MovieListViewModel, disposeBag: DisposeBag) {
         self.viewModel = viewModel
         self.disposeBag = disposeBag
@@ -45,6 +44,8 @@ class MovieListViewController: UIViewController {
         super.viewWillAppear(animated)
         viewModel.getMovies()
     }
+    
+    
     
 }
 

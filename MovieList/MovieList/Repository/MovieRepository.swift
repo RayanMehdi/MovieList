@@ -9,29 +9,27 @@ import Foundation
 import RxSwift
 import Alamofire
 
-let decoder: JSONDecoder = {
-    let decoder = JSONDecoder()
-    decoder.keyDecodingStrategy = .convertFromSnakeCase
-    return decoder
-}()
-
-enum MovieApiError :Int, Error {
-    case unAuthorized = 401
-    case notFound = 404
-    
-}
-
 
 class MovieRepository {
+    //MARK: - Properties
     
     var apiKey: String! 
-    var baseUrl: String! 
+    var baseUrl: String!
+    let decoder: JSONDecoder = {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        return decoder
+    }()
     
+    //MARK: - Initializer
     init(apiKey: String, baseUrl: String) {
         self.apiKey = apiKey
         self.baseUrl = baseUrl
     }
     
+    //MARK: - Methods
+    
+    //TODO: Implement Error Handling
     func getPoster(forMovie movie: Movie) -> Observable<UIImage>{
         return Observable.create { obs in
             AF.request(movie.posterURL ?? "", parameters: [:]).validate()
@@ -55,6 +53,7 @@ class MovieRepository {
         
     }
     
+    //TODO: Implement Error Handling
     func getMovies() -> Observable<MovieResponse> {
         
         let url = baseUrl + "/popular?api_key=\(apiKey!)"
@@ -67,7 +66,7 @@ class MovieRepository {
                             return
                         }
                         do {
-                            let movies = try decoder.decode(MovieResponse.self, from: data)
+                            let movies = try self.decoder.decode(MovieResponse.self, from: data)
                             obs.onNext(movies)
                         } catch {
                             obs.onError(error)

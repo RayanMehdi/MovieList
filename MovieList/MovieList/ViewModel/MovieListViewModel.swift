@@ -11,16 +11,21 @@ import RxCocoa
 
 class MovieListViewModel {
     
+    //MARK: - Properties
     var movies: BehaviorRelay<[MovieWithPoster]>!
     var movieRepository: MovieRepository!
     var disposeBag: DisposeBag!
     
+    //TODO: Add error and loading observables
+    
+    //MARK: - Initializer
     init(movies: BehaviorRelay<[MovieWithPoster]>, movieRepository: MovieRepository, disposeBag: DisposeBag) {
         self.movies = movies
         self.movieRepository = movieRepository
         self.disposeBag = disposeBag
     }
     
+    //MARK: - Methods
     
     func getMovies() {
         movieRepository.getMovies().subscribe(onNext: { [unowned self] response in
@@ -29,7 +34,6 @@ class MovieListViewModel {
                     let newMovie = MovieWithPoster(movie: moviesResponse, poster: imageResponse)
                     let newValue = movies.value + [newMovie]
                     movies.accept(newValue)
-                    
                     
                 })
                 .disposed(by: disposeBag)
