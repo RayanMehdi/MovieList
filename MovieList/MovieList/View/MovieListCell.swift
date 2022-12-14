@@ -11,9 +11,11 @@ import UIKit
 class MovieListCell: UITableViewCell {
     
     @IBOutlet weak var moviePosterImageView: UIImageView!
-    
-    
     @IBOutlet weak var titleLabel: UILabel!
-    
     @IBOutlet weak var descriptionLabel: UILabel!
+    
+    func configureWithMovie(_ movie: Movie) {
+        self.titleLabel.text = movie.title
+        self.descriptionLabel.text = movie.overview
+    }
 }

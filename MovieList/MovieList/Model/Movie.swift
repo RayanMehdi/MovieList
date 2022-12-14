@@ -17,3 +17,4 @@ struct Movie: Decodable, Equatable, Identifiable {
     }
 }
 
+
