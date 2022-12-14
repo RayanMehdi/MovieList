@@ -10,13 +10,14 @@
 		62273F9753076EBA9B765831 /* libPods-MovieListTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2990DC505DB38378D61F2D57 /* libPods-MovieListTests.a */; };
 		82B7C05E2949D6D600157B61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B7C05D2949D6D600157B61 /* AppDelegate.swift */; };
 		82B7C0602949D6D600157B61 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B7C05F2949D6D600157B61 /* SceneDelegate.swift */; };
-		82B7C0622949D6D600157B61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B7C0612949D6D600157B61 /* ViewController.swift */; };
+		82B7C0622949D6D600157B61 /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B7C0612949D6D600157B61 /* MovieListViewController.swift */; };
 		82B7C0652949D6D600157B61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82B7C0632949D6D600157B61 /* Main.storyboard */; };
 		82B7C0672949D6D700157B61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82B7C0662949D6D700157B61 /* Assets.xcassets */; };
 		82B7C06A2949D6D700157B61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82B7C0682949D6D700157B61 /* LaunchScreen.storyboard */; };
 		82B7C0752949D6D700157B61 /* MovieListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B7C0742949D6D700157B61 /* MovieListTests.swift */; };
 		82B7C07F2949D6D700157B61 /* MovieListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B7C07E2949D6D700157B61 /* MovieListUITests.swift */; };
 		82B7C0812949D6D700157B61 /* MovieListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B7C0802949D6D700157B61 /* MovieListUITestsLaunchTests.swift */; };
+		82CAA06A2949F37600654126 /* MovieListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAA0692949F37600654126 /* MovieListCell.swift */; };
 		82D8A99D2949ED880094DEA0 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D8A99C2949ED880094DEA0 /* Movie.swift */; };
 		82D8A9A02949EEDD0094DEA0 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D8A99F2949EEDD0094DEA0 /* ApiResponse.swift */; };
 		89310AFD818555AFB66BCA9C /* Pods_MovieList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A0E40E43215B71E58EC601 /* Pods_MovieList.framework */; };
@@ -49,7 +50,7 @@
 		82B7C05A2949D6D600157B61 /* MovieList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82B7C05D2949D6D600157B61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82B7C05F2949D6D600157B61 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		82B7C0612949D6D600157B61 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		82B7C0612949D6D600157B61 /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
 		82B7C0642949D6D600157B61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		82B7C0662949D6D700157B61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82B7C0692949D6D700157B61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,6 +60,7 @@
 		82B7C07A2949D6D700157B61 /* MovieListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		82B7C07E2949D6D700157B61 /* MovieListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListUITests.swift; sourceTree = "<group>"; };
 		82B7C0802949D6D700157B61 /* MovieListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		82CAA0692949F37600654126 /* MovieListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCell.swift; sourceTree = "<group>"; };
 		82D8A99C2949ED880094DEA0 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		82D8A99F2949EEDD0094DEA0 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		8C0814A9D2A2FB51924A4DC7 /* Pods-MovieListTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieListTests.debug.xcconfig"; path = "Target Support Files/Pods-MovieListTests/Pods-MovieListTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -150,7 +152,6 @@
 				82D8A9962949DD1A0094DEA0 /* View */,
 				82B7C05D2949D6D600157B61 /* AppDelegate.swift */,
 				82B7C05F2949D6D600157B61 /* SceneDelegate.swift */,
-				82B7C0612949D6D600157B61 /* ViewController.swift */,
 				82B7C0632949D6D600157B61 /* Main.storyboard */,
 				82B7C0662949D6D700157B61 /* Assets.xcassets */,
 				82B7C0682949D6D700157B61 /* LaunchScreen.storyboard */,
@@ -179,6 +180,8 @@
 		82D8A9962949DD1A0094DEA0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				82B7C0612949D6D600157B61 /* MovieListViewController.swift */,
+				82CAA0692949F37600654126 /* MovieListCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -434,8 +437,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82B7C0622949D6D600157B61 /* ViewController.swift in Sources */,
+				82B7C0622949D6D600157B61 /* MovieListViewController.swift in Sources */,
 				82B7C05E2949D6D600157B61 /* AppDelegate.swift in Sources */,
+				82CAA06A2949F37600654126 /* MovieListCell.swift in Sources */,
 				82D8A99D2949ED880094DEA0 /* Movie.swift in Sources */,
 				82D8A9A02949EEDD0094DEA0 /* ApiResponse.swift in Sources */,
 				82B7C0602949D6D600157B61 /* SceneDelegate.swift in Sources */,
