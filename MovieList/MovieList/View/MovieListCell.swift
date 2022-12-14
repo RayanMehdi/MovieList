@@ -14,8 +14,14 @@ class MovieListCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    func configureWithMovie(_ movie: Movie) {
-        self.titleLabel.text = movie.title
-        self.descriptionLabel.text = movie.overview
+    func configureWithMovie(_ movie: MovieWithPoster) {
+        self.titleLabel.text = movie.movie.title
+        self.descriptionLabel.text = movie.movie.overview
+        self.moviePosterImageView.image = movie.poster
+        
+    }
+    
+    func configureWithPoster(_ poster: UIImage) {
+        self.moviePosterImageView.image = poster
     }
 }

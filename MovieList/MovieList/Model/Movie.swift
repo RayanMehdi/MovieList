@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Movie: Decodable, Equatable, Identifiable {
     let id: Int?
@@ -13,8 +14,16 @@ struct Movie: Decodable, Equatable, Identifiable {
     let overview: String?
     let posterPath: String?
     var posterURL: URL? {
-        URL(string: "https://image.tmdb.org/t/p/w400/\(posterPath ?? "")")!
+        URL(string: "https://image.tmdb.org/t/p/w500/\(posterPath ?? "")")!
     }
+    
 }
+
+struct MovieWithPoster{
+    let movie: Movie
+    let poster: UIImage
+}
+
+
 
 

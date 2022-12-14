@@ -49,9 +49,10 @@ extension MovieListViewController {
                 .rx
                 .items(cellIdentifier: "MovieListCell", cellType: MovieListCell.self)) { row, movie, cell in
                     cell.configureWithMovie(movie)
-                    
                 }
                 .disposed(by: disposeBag)
+        
+
     }
 }
 
